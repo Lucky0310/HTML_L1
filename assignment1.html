@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>Stock Trading App</title>
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 20%;
+        }
+        td {
+            border: 1px solid black;
+        }
+        th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body style="margin: 3%;">
+<div>
+    <table id="table">
+        <tr>
+            <th>TICKER</th>
+            <th>PRICE</th>
+        </tr>
+        <tr>
+            <td>WIPRO</td>
+            <td>298.45</td>
+        </tr>
+        <tr>
+            <td>INFY</td>
+            <td>949.95</td>
+        </tr>
+        <tr>
+            <td>TCS</td>
+            <td>2713.70</td>
+        </tr>
+        <tr>
+            <td>TECHM</td>
+            <td>485.85</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <form name="assignment1" onsubmit="validateAssignment1()" method="post">
+        <h1>Stock Trading</h1>
+        <table style="border: 1;">
+            <tr>
+                <td style="border: 1">Ticker:</td>
+                <td style="border: 1; text-transform: uppercase;"><input type="text" name="ticker"></input></td>
+            </tr>
+            <tr>
+                <td style="border: 1">Quantity:</td>
+                <td style="border: 1;"><input type="text" name="qty"></input></td>
+            </tr>
+            <tr>
+                <td style="border: 1;"><input type="submit" name="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id='debug'></div>
+</body>
+
+<script>
+    function validateAssignment1() {
+        var quantity = document.forms['assignment1']['qty'].value;
+        quantity = parseInt(quantity);
+        if(quantity < 10 || quantity > 100 || quantity % 10 !== 0)
+            alert("INVALID STOCK QUANTITY");
+    }
+</script>
+</html>
